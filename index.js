@@ -14,8 +14,9 @@ let num = 10;
 // console.log(--num);
 
 
-let number = '124';
+let number = NaN;
 
-console.log(+number);
-console.log(-number);
+// console.log(+number);
+// console.log(-number);
 
+console.log(!!number);
