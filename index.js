@@ -29,9 +29,12 @@ let number = 5;
 
 // console.log(null || NaN);
 
-let numb = 10;
-let numeb = 'text';
+// numb %= 4;
 
-numb %= 4;
+let num1 = 1;
+let num2 = '1';
 
-console.log(numb);
+
+console.log(num1 !== num2);
+
+console.log(NaN === NaN);
