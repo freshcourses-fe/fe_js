@@ -25,6 +25,13 @@ let number = 5;
 
 // console.log( number < 20);
 
-console.log(20 && 'test'); 
+// console.log(20 && 'test'); 
 
-console.log(null || NaN);
+// console.log(null || NaN);
+
+let numb = 10;
+let numeb = 'text';
+
+numb %= 4;
+
+console.log(numb);
