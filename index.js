@@ -14,9 +14,17 @@ let num = 10;
 // console.log(--num);
 
 
-let number = NaN;
+let number = 5;
 
 // console.log(+number);
 // console.log(-number);
 
-console.log(!!number);
+// console.log(!!number);
+
+// console.log( number > 0);
+
+// console.log( number < 20);
+
+console.log(20 && 'test'); 
+
+console.log(null || NaN);
