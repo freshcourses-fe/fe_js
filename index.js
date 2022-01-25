@@ -1,5 +1,5 @@
-const result = (2 + 2) * 2;
-
+const mod = -4 % 2;
+const result = (-4) ** 2;
 // alert();
 
-console.log(typeof null);
+console.log(result);
