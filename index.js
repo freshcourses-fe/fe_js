@@ -1,12 +1,13 @@
-const input1 = +prompt('Enter num 1');
-const input2 = +prompt('Enter num 2');
+const userName = prompt('Enter name');
+const userAnswer = prompt("Вы уже уходите?");
 
-const result =  input1 + input2;
+const yesAnswer = 'da';
+const noAnswer = 'net';
 
-const checkResult = isNaN(result);
+if(yesAnswer === userAnswer){
+  alert('Bye ' + userName);
+} 
 
-if(checkResult === true){
-  alert('ERROR');
-} else {
-  alert(result);
-}
+if(noAnswer === userAnswer){
+  alert('Hello ' + userName);
+} 
