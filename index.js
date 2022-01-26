@@ -1,13 +1,29 @@
-const userName = prompt('Enter name');
-const userAnswer = prompt("Вы уже уходите?");
+// function expression
+const testVar = 1;
 
-const yesAnswer = 'da';
-const noAnswer = 'net';
+const askUser = function (testName, answer) {
+  const yesAnswer = 'da';
+  const noAnswer = 'net';
 
-if(yesAnswer === userAnswer){
-  alert('Bye ' + userName);
-} 
+  if(testName === undefined || answer === undefined) {
+   return 'не хватает данных';
+  }
 
-if(noAnswer === userAnswer){
-  alert('Hello ' + userName);
-} 
+  console.log(testVar);
+
+  if (yesAnswer === answer) {
+    return 'Bye ' + testName;
+  }
+
+  if (noAnswer === answer) {
+    return 'Hello ' + testName;
+  }
+};
+
+// const userName = prompt('Enter name');
+// const userAnswer = prompt('Вы уже уходите?');
+
+// const result = askUser(userName, userAnswer);
+
+// console.log(testName);
+// alert(result);
