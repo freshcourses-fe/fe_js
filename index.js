@@ -1,29 +1,16 @@
-// function expression
-const testVar = 1;
-
-const askUser = function (testName, answer) {
-  const yesAnswer = 'da';
-  const noAnswer = 'net';
-
-  if(testName === undefined || answer === undefined) {
-   return 'не хватает данных';
-  }
-
-  console.log(testVar);
-
-  if (yesAnswer === answer) {
-    return 'Bye ' + testName;
-  }
-
-  if (noAnswer === answer) {
-    return 'Hello ' + testName;
-  }
+const isEven = function (number) {
+  return number % 2 === 0;
 };
 
-// const userName = prompt('Enter name');
-// const userAnswer = prompt('Вы уже уходите?');
+// const testNum = +prompt('chislo dlya proverki');
 
-// const result = askUser(userName, userAnswer);
+// const result = isEven(testNum);
 
-// console.log(testName);
-// alert(result);
+// console.log(result);
+
+const findMinNumberFromTwo = function (num1, num2) {
+  if (num1 > num2) {
+    return num2;
+  }
+  return num1;
+};
