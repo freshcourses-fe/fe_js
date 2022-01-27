@@ -30,22 +30,23 @@ const findMinNumberFromTwo = function (num1, num2) {
 
 
 
-// const checkNumberAgainstOther = function (num1, num2) {
-//   if(typeof num1 === 'number' ) {
-//     if (num1 > num2) {
-//       console.log(num1 +' больше ' + num2);
-//     } else if (num1 < num2) {
-//       console.log(num1 +" меньше " + num2);
-//     } else if (num2 > num1) {
-//       console.log('test');
-//     } else {
-//       console.log(num1 +' равны ' + num2);
-//     }
+const checkNumberAgainstOther = function (num1, num2) {
+  debugger;
+  if(typeof num1 === 'number' ) {
+    if (num1 > num2) {
+      console.log(num1 +' больше ' + num2);
+    } else if (num1 < num2) {
+      console.log(num1 +" меньше " + num2);
+    } else if (num2 > num1) {
+      console.log('test');
+    } else {
+      console.log(num1 +' равны ' + num2);
+    }
 
-//   } else {
-//     console.log('Введите числа плз');
-//   }
-// };
+  } else {
+    console.log('Введите числа плз');
+  }
+};
 
 const num1 = 5;
 
@@ -72,8 +73,3 @@ const testFunc = function() {
 
   console.log(y);
 }
-
-
-
-console.log(y);
-// console.log(num1);
