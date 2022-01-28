@@ -1,28 +1,31 @@
-// const number = +prompt('Введите число');
+const result2 = getMinNumber2(1, 5);
 
-// if (number >= 0) {
-//   alert('число положительное');
-// } else {
-//   alert('число отрицательное');
-// }
-
-// number >= 0 ? alert('число положительное') : alert('число отрицательное');
-
+// function expression
 const getMinNumber = function (number1, number2) {
-  // if(number1 < number2) {
-  //   return number1
-  // } else {
-  //   return number2
-  // }
-
   return number1 < number2 ? number1 : number2;
 };
 
-// userRole === 'test'
+// function declaration
+function getMinNumber2(number1, number2) {
+  return number1 < number2 ? number1 : number2;
+}
 
-// alert( getMinNumber(-200, 5) );
+const result1 = getMinNumber(1, 5);
 
-let isLigthTheme = true;
+let counter = 1;
 
+while (true) {
+  console.log(counter++);
 
-isLigthTheme ? 'light-theme-button' : 'dark-theme-button';
+  if (counter > 5) {
+    break;
+  }
+}
+
+do {
+  console.log(counter++);
+
+  if (counter > 100) {
+    break;
+  }
+} while (true);
