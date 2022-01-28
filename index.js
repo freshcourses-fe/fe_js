@@ -1,94 +1,28 @@
-const isEven = function (number) {
-  return number % 2 === 0;
+// const number = +prompt('Введите число');
+
+// if (number >= 0) {
+//   alert('число положительное');
+// } else {
+//   alert('число отрицательное');
+// }
+
+// number >= 0 ? alert('число положительное') : alert('число отрицательное');
+
+const getMinNumber = function (number1, number2) {
+  // if(number1 < number2) {
+  //   return number1
+  // } else {
+  //   return number2
+  // }
+
+  return number1 < number2 ? number1 : number2;
 };
 
-// const testNum = +prompt('chislo dlya proverki');
+// userRole === 'test'
 
-// const result = isEven(testNum);
+// alert( getMinNumber(-200, 5) );
 
-// console.log(result);
-
-const findMinNumberFromTwo = function (num1, num2) {
-  if (num1 > num2) {
-    return num2;
-  }
-  return num1;
-};
+let isLigthTheme = true;
 
 
-// if( ' ' ) {
-//   alert('два больше нуля')
-// }
-
-// const greetUser = function(userName) {
-//   if(userName) {
-//     alert('Hello ' + userName);
-//   } else {
-//     alert('Hello Anonym');
-//   }
-// }
-
-
-
-// const checkNumberAgainstOther = function (num1, num2) {
-//   debugger;
-//   if(typeof num1 === 'number' ) {
-//     if (num1 > num2) {
-//       console.log(num1 +' больше ' + num2);
-//     } else if (num1 < num2) {
-//       console.log(num1 +" меньше " + num2);
-//     } else if (num2 > num1) {
-//       console.log('test');
-//     } else {
-//       console.log(num1 +' равны ' + num2);
-//     }
-
-//   } else {
-//     console.log('Введите числа плз');
-//   }
-// };
-
-// const num1 = 5;
-
-// if(true) {
-//   var test1 = true;
-//   console.log(test1);
-//   console.log(num1);
-
-//   if(true) {
-//     const test2 = 12;
-//     console.log(test2);
-//     console.log(test1);
-//     console.log(num1);
-//   }
-
-// }
-
-const number = 3;
-
-const userRole = 'user';
-
-
-
-switch(userRole) {
-  case 'user': 
-  case 'user+': {
-    console.log('Почетный юзер');
-    break;
-  }
-  case 'moder': {
-    console.log('Moderator code');
-  }
-  case 'Admin': {
-    console.log('Admin code');
-    break;
-  }
-  case '3': {
-    console.log('зачем');
-    break;
-  }
-  default: {
-    alert('нет совпадений');
-  }
-}
-
+isLigthTheme ? 'light-theme-button' : 'dark-theme-button';
