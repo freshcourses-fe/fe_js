@@ -1,47 +1,37 @@
-const result2 = getMinNumber2(1, 5);
-
-// function expression
-const getMinNumber = function (number1, number2) {
-  return number1 < number2 ? number1 : number2;
-};
-
-// function declaration
-function getMinNumber2(number1, number2) {
-  return number1 < number2 ? number1 : number2;
+function ddosPage() {
+  let isRunning = true;
 }
 
-if(true) {
-  // 
-  'block 1'
-} else {
-  //
-  'block 2'
-}
-// true ? 'block 1' : 'block 2';
+// let counter = 0;
 
-const userName = prompt('Enter your name');
-const isMale = confirm('Вы мужчина?');
+// // while (counter <= 10) {
+// //   counter++;
 
-const prefix = isMale ? 'Mr. ' : 'Mrs. ';
-const message = 'Hello ' + prefix + userName;
-alert(message);
+// //   if (counter % 2 === 0) {
+// //     continue;
+// //   }
 
-// const result1 = getMinNumber(1, 5);
-
-// let counter = 1;
-
-// while (true) {
-//   console.log(counter++);
-
-//   if (counter > 5) {
-//     break;
-//   }
-// }
+// //   console.log(counter);
+// // }
+// counter = 0;
 
 // do {
-//   console.log(counter++);
+//   counter++;
 
-//   if (counter > 100) {
-//     break;
+//   if (counter % 2 === 0) {
+//     continue;
 //   }
-// } while (true);
+
+//   console.log(counter);
+// } while (counter <= 10);
+
+for( let counter = 0 ; counter < 60; counter++) {
+  console.log(counter);
+}
+
+function ddos() {
+  for (;;) {
+    console.log(1);
+    // renderPhone(phone);
+  }
+}
