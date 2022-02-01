@@ -1,37 +1,53 @@
-function ddosPage() {
-  let isRunning = true;
-}
+// let myFirstName = 'Kirill';
+// let myLastName = 'Secret';
 
-// let counter = 0;
+// let student1FirstName = 'Petya';
+// let student1LastName = 'Petrov';
 
-// // while (counter <= 10) {
-// //   counter++;
+// let student2FirstName = 'Natasha';
+// let student2LastName = 'Sidorova';
 
-// //   if (counter % 2 === 0) {
-// //     continue;
-// //   }
+// function greet(firstName, lastName) {
+//   return 'Hello '+ firstName + ' ' + lastName 
+// }
 
-// //   console.log(counter);
-// // }
-// counter = 0;
-
-// do {
-//   counter++;
-
-//   if (counter % 2 === 0) {
-//     continue;
-//   }
-
-//   console.log(counter);
-// } while (counter <= 10);
-
-for( let counter = 0 ; counter < 60; counter++) {
-  console.log(counter);
-}
-
-function ddos() {
-  for (;;) {
-    console.log(1);
-    // renderPhone(phone);
+const teacher = {
+  firstName : 'Kiril',
+  lastName : 'Secret',
+  weight: 900,
+  isMale: true,
+  nullProperty: null,
+  undefinedProperty: undefined,
+  address: {
+    country: 'UA',
+    city: 'ZP',
+    street: 'nope'
+  },
+  sayHello: function () {
+    alert('Привет');
   }
+};
+
+const student1 = {
+  firstName: 'Kirill',
+  lastName: 'Petrov',
+  weight: 85
 }
+
+// ERROR! 
+// teacher = {
+//   firstName: 'Kirill',
+//   lastName: 'Petrov',
+//   weight: 85
+// }
+
+// перезапись свойств обьекта
+// или создание новых свойств 
+// уже существующему обьекту
+teacher.firstName = 'Vasya';
+
+// удаление свойства
+delete teacher.address;
+
+// не алертите обьекты
+alert(student1);
