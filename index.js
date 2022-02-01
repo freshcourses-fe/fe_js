@@ -64,7 +64,60 @@ function greet(person) {
   return 'Неверные данный, нужен пользователь';
 }
 
-const book = {
-  name: 'LOTR',
-  author: 'Tolkien',
+const cat1 = {
+  name: 'Pushok',
+  breed: 'Maine Coon',
+  age: 3,
+  isMale: true,
+  meow: function () {
+    return 'Meow';
+  },
 };
+
+const cat2 = {
+  name: 'Vas`ka',
+  breed: 'Persian',
+  age: 2,
+  isMale: true,
+  meow: function () {
+    return 'Meow';
+  },
+};
+
+const cat3 = {
+  name: 'Pushok',
+  brd: 'Maine Coon',
+  age: 3,
+  isMale: true,
+  meow: function () {
+    return 'Meow';
+  },
+};
+
+function Cat(name, breed, age, isMale) {
+  debugger;
+  this.meow = function () {
+    return 'Meow';
+  };
+
+  this.name = name;
+  this.breed = breed;
+  this.age = age;
+  this.isMale = isMale;
+}
+
+const cat4 = new Cat('Barsic', 'siameese', 3.5, true);
+
+
+/* 
+сделайте функцию конструктор Car
+у машины есть следубющие свойства
+марка
+модель
+цвет
+год выпуска
+расход топлива  (число, литров на километр)
+обьем бака (число)
+
+машина должна уметь ехать (метод обьекта)
+*/
