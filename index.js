@@ -8,12 +8,12 @@
 // let student2LastName = 'Sidorova';
 
 // function greet(firstName, lastName) {
-//   return 'Hello '+ firstName + ' ' + lastName 
+//   return 'Hello '+ firstName + ' ' + lastName
 // }
 
 const teacher = {
-  firstName : 'Kiril',
-  lastName : 'Secret',
+  firstName: 'Kiril',
+  lastName: 'Secret',
   weight: 900,
   isMale: true,
   nullProperty: null,
@@ -21,20 +21,20 @@ const teacher = {
   address: {
     country: 'UA',
     city: 'ZP',
-    street: 'nope'
+    street: 'nope',
   },
   sayHello: function () {
     alert('Привет');
-  }
+  },
 };
 
 const student1 = {
   firstName: 'Kirill',
   lastName: 'Petrov',
-  weight: 85
-}
+  weight: 85,
+};
 
-// ERROR! 
+// ERROR!
 // teacher = {
 //   firstName: 'Kirill',
 //   lastName: 'Petrov',
@@ -42,7 +42,7 @@ const student1 = {
 // }
 
 // перезапись свойств обьекта
-// или создание новых свойств 
+// или создание новых свойств
 // уже существующему обьекту
 teacher.firstName = 'Vasya';
 
@@ -50,4 +50,21 @@ teacher.firstName = 'Vasya';
 delete teacher.address;
 
 // не алертите обьекты
-alert(student1);
+// alert(student1);
+
+function greet(person) {
+  if (
+    typeof person.firstName === 'string' &&
+    person.firstName !== '' &&
+    typeof person.lastName === 'string' &&
+    person.lastName !== ''
+  ) {
+    return 'Hello ' + person.firstName + ' ' + person.lastName;
+  }
+  return 'Неверные данный, нужен пользователь';
+}
+
+const book = {
+  name: 'LOTR',
+  author: 'Tolkien',
+};
