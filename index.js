@@ -1,37 +1,59 @@
-function ddosPage() {
-  let isRunning = true;
-}
+// 3)  Найти сумму чисел в пределах от 1 до 100.
 
-// let counter = 0;
+function task3For() {
+  let result = 0;
 
-// // while (counter <= 10) {
-// //   counter++;
-
-// //   if (counter % 2 === 0) {
-// //     continue;
-// //   }
-
-// //   console.log(counter);
-// // }
-// counter = 0;
-
-// do {
-//   counter++;
-
-//   if (counter % 2 === 0) {
-//     continue;
-//   }
-
-//   console.log(counter);
-// } while (counter <= 10);
-
-for( let counter = 0 ; counter < 60; counter++) {
-  console.log(counter);
-}
-
-function ddos() {
-  for (;;) {
-    console.log(1);
-    // renderPhone(phone);
+  for (let i = 1; i <= 100; i++) {
+    result = result + i;
   }
+
+  return result;
+}
+
+function task3While() {
+  let result = 0;
+  let i = 1;
+
+  while (i <= 100) {
+    result += i;
+    i++;
+    // result += i++;
+  }
+
+  return result;
+}
+
+// 4) предлагать пользователю решить пример (2 + 2 * 2) до тех пор, пока он его не решит
+function task4While() {
+
+  while (true) {
+    const answer = +prompt('введите реузльтат 2 + 2 * 2');
+    if(answer === 6) {
+      break;
+    }
+  }
+}
+
+let isUserAnswered = false;
+
+// for(let i = 0; i < 1;) {
+//   const answer = +prompt('введите реузльтат 2 + 2 * 2');
+//   if(answer === 6) {
+//     i++;
+//     break;
+//   }
+// }
+
+for(let i = 0; i < 5 ;i++) {
+  const answer = +prompt('введите реузльтат 2 + 2 * 2');
+  if(answer === 6) {
+    isUserAnswered = true;
+    break;
+  }
+}
+
+if(isUserAnswered) {
+  alert('молодец')
+} else {
+  alert('огурец')
 }
