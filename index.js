@@ -110,9 +110,9 @@ function Cat(name, breed, age, isMale) {
   return this;
 }
 
-// const cat4 = new Cat('Barsic', 'siameese', 3.5, true);
+const cat4 = new Cat('Barsic', 'siameese', 3.5, true);
 
-const cat5 = Cat('Ivan', 'dvorovoi', 50 , true);
+// const cat5 = Cat('Ivan', 'dvorovoi', 50, true);
 
 /* 
 сделайте функцию конструктор Car
@@ -126,3 +126,43 @@ const cat5 = Cat('Ivan', 'dvorovoi', 50 , true);
 
 машина должна уметь ехать (метод обьекта)
 */
+
+function Car(
+  manufacturer,
+  model,
+  color,
+  releaseYear,
+  fuelConsumption,
+  fuelVolume
+) {
+  this.manufacturer = manufacturer;
+  this.model = model;
+  this.color = color;
+  this.releaseYear = releaseYear;
+  this.fuelConsumption = fuelConsumption;
+  this.fuelVolume = fuelVolume;
+
+  this.drive = function () {
+    return 'мы едем';
+  };
+
+  this.getDrivedDistance = function () {
+    return this.fuelVolume * this.fuelConsumption;
+  };
+
+  return this;
+}
+
+const car = new Car('Toyota', 'Camry', 'black', 2022, 8.3, 60);
+
+const car2 = new Car('Toyota', 'Camry', 'black', 2022, 15, 100);
+// const car3 = new Car('Toyota', 'Camry', 'black', 2022);
+
+car.test = function () {
+  // returns car
+  return this;
+}
+
+function tst() {
+  // undefined
+}
