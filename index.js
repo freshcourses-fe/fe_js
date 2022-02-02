@@ -1,3 +1,5 @@
+'use strict';
+
 // let myFirstName = 'Kirill';
 // let myLastName = 'Secret';
 
@@ -95,7 +97,7 @@ const cat3 = {
 };
 
 function Cat(name, breed, age, isMale) {
-  debugger;
+  // debugger;
   this.meow = function () {
     return 'Meow';
   };
@@ -104,10 +106,13 @@ function Cat(name, breed, age, isMale) {
   this.breed = breed;
   this.age = age;
   this.isMale = isMale;
+
+  return this;
 }
 
-const cat4 = new Cat('Barsic', 'siameese', 3.5, true);
+// const cat4 = new Cat('Barsic', 'siameese', 3.5, true);
 
+const cat5 = Cat('Ivan', 'dvorovoi', 50 , true);
 
 /* 
 сделайте функцию конструктор Car
