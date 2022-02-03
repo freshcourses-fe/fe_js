@@ -22,18 +22,21 @@ const user = {
   login: 'test',
   password: '12345',
   10: 'secret 1',
-  'secret string': true,
+  'secretString': true,
+  address: {
+    country: "UA"
+  }
 };
 
 /*
   Создать таблицу умножения в обьекте
 */
 
-function createMultiplicationtable() {
+function createMultiplicationtable(number1, number2) {
   const table = {};
 
-  for (let i = 1; i <= 9; i++) {
-    for (let j = 1; j <= 10; j++) {
+  for (let i = 1; i <= number1; i++) {
+    for (let j = 1; j <= number2; j++) {
       table[`${i} * ${j} = `] = i * j;
     }
   }
@@ -41,7 +44,7 @@ function createMultiplicationtable() {
   return table;
 }
 
-const tableButBetter = createMultiplicationtable();
+const tableButBetter = createMultiplicationtable(90, 10);
 
 const table = {
   '1 * 1 = ': 1,
@@ -67,3 +70,7 @@ const table = {
   '3 * 1 = ': 3,
   '9 * 10 = ': 90,
 };
+
+// опциональная последовательность
+// не упадет с ошибкой если не будет вложенных обьектов
+user?.address?.city?.street
