@@ -32,8 +32,8 @@ const user = {
 function createMultiplicationtable() {
   const table = {};
 
-  for (let i = 1; i <= 1000000; i++) {
-    for (let j = 1; j <= 10000000; j++) {
+  for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= 10; j++) {
       table[`${i} * ${j} = `] = i * j;
     }
   }
