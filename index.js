@@ -1,10 +1,30 @@
 'use strict';
-const user1 = {
-  name: 'Feofan',
-  age: 12
+
+const mostPopularNames = {
+  0: 'Anton',
+  1: 'Pavel',
+  2: 'Ivanna',
 };
 
-const user3 = user1;
+const namesArray = new Array('Anton', 'Antonina', 'Feofan', 'Natasha');
+
+const arr = ['Anton', 'Antonina', 'Feofan', 'Natasha'];
+
+// создайте массив
+// положите в него 3 любых значения с помощью метода push
+// удалите последнее значение из массива
+// и сохраните в переменную deleted
+
+arr.push('element1'); // вставляет в конец
+const deleted1 = arr.pop(); // удляет последний элемент
+
+arr.unshift('element2', 'element3'); // вставляет в начало элементы и  двыигает уже существующие
+const deleted2 = arr.shift(); // удаляет с напчала
+
+// в массиве начиная с третьего элемента
+// удалить 2 элемента и вставить один новый элемент
+
+// скопировать в новый массив первую половину старого
 
 // цикл для обхода по свойству обьектов
 for(const key in user1) {
@@ -15,11 +35,3 @@ const user2 = {
   name: 'Feofan',
   age: 12
 }
-
-const string1 = 'test';
-const string2 = 'test';
-// опциональная последовательность
-// не упадет с ошибкой если не будет вложенных обьектов
-user1?.address?.city?.street
-
-user1['name'];
