@@ -1,76 +1,25 @@
 'use strict';
-
-let number1 = 5;
-let number2 = 3;
-// let number1 = 5;
-// let number2 = 3;
-// const answer = prompt(number1 + ' + ' + number2 + ' ?');
-
-// alert(number1 + ' + '+ number2 +' = ' + (number1 + number2));
-// alert(`${number1} + ${number2} = ${number1 + number2}`);
-`sdsadadsadsadsdsad + ${5 + 2 > 7}`;
-
-// alert("Глава 1 \nЧто-то по'шло не так. Иван сказал: \"Все плохо\u00AE\"");
-
-// alert(`Глава
-// Что-то по'шло не так.
-//             Иван сказал: "Все плохо\u00AE"`);
-
-// const answer = prompt(number1 + ` + ` + number2 + ` ?`);
-
-const user = {
-  login: 'test',
-  password: '12345',
-  10: 'secret 1',
-  'secretString': true,
-  address: {
-    country: "UA"
-  }
+const user1 = {
+  name: 'Feofan',
+  age: 12
 };
 
-/*
-  Создать таблицу умножения в обьекте
-*/
+const user3 = user1;
 
-function createMultiplicationtable(number1, number2) {
-  const table = {};
-
-  for (let i = 1; i <= number1; i++) {
-    for (let j = 1; j <= number2; j++) {
-      table[`${i} * ${j} = `] = i * j;
-    }
-  }
-
-  return table;
+// цикл для обхода по свойству обьектов
+for(const key in user1) {
+  console.log(user1[key]);
 }
 
-const tableButBetter = createMultiplicationtable(90, 10);
+const user2 = {
+  name: 'Feofan',
+  age: 12
+}
 
-const table = {
-  '1 * 1 = ': 1,
-  '1 * 2 = ': 2,
-  '1 * 3 = ': 3,
-  '1 * 4 = ': 4,
-  '1 * 5 = ': 5,
-  '1 * 6 = ': 6,
-  '1 * 7 = ': 7,
-  '1 * 8 = ': 8,
-  '1 * 9 = ': 9,
-  '1 * 10 =': 10,
-  '2 * 1 = ': 2,
-  '2 * 2 = ': 4,
-  '2 * 3 = ': 6,
-  '2 * 4 = ': 8,
-  '2 * 5 = ': 10,
-  '2 * 6 = ': 12,
-  '2 * 7 = ': 14,
-  '2 * 8 = ': 16,
-  '2 * 9 = ': 18,
-  '2 * 10 = ': 20,
-  '3 * 1 = ': 3,
-  '9 * 10 = ': 90,
-};
-
+const string1 = 'test';
+const string2 = 'test';
 // опциональная последовательность
 // не упадет с ошибкой если не будет вложенных обьектов
-user?.address?.city?.street
+user1?.address?.city?.street
+
+user1['name'];
