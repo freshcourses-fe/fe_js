@@ -26,12 +26,14 @@ const deleted2 = arr.shift(); // удаляет с напчала
 
 // скопировать в новый массив первую половину старого
 
-// цикл для обхода по свойству обьектов
-for(const key in user1) {
-  console.log(user1[key]);
+function highOrderFunction() {
+  // func1();
+
+  return function () {
+    return true;
+  };
 }
 
-const user2 = {
-  name: 'Feofan',
-  age: 12
+function test () {
+  console.log('меня передали другйо');
 }
