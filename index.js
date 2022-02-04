@@ -18,6 +18,18 @@ const users = [
   { name: 'Anton', isAdult: false },
 ];
 
-const adults = users.filter(function(user, index, arr) {
-  return user.name === 'Anton';
+const isAllAdults = users.every(function (user) {
+  return user.isAdult;
+});
+
+const isSomeAdults = users.some(function (user) {
+  return user.isAdult;
+});
+
+const foundUser = users.find(function(user) {
+  return user.age;
+});
+
+const foundIndex = users.findIndex(function(user) {
+  return user.age;
 });
