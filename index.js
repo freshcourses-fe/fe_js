@@ -1,35 +1,31 @@
 'use strict';
 
-const maleNames = ['Anton', 'Pavel', 'Ivan'];
-const femaleNames = ['Maria', 'Natasha', 'Masha', 'Anton'];
-const otherNames = ['Anton', 'Pavel', 'Anton', 'Petka'];
-
-const names = maleNames.concat(femaleNames, otherNames);
-
-const witoutAntons = names.filter(callback);
-
-function callback(currentName, index, arr) {
-  return currentName !== 'Anton';
-}
-
-const users = [
-  { name: 'Ivan', isAdult: true },
-  { name: 'Masha', isAdult: true },
-  { name: 'Anton', isAdult: false },
+const arr = [
+  { name: 'test 1' },
+  { name: 'test 2' },
+  { name: 'test 3' },
+  { name: 'test 4' },
+  { name: 'test 5' },
+  { name: 'test 6' },
 ];
 
-const isAllAdults = users.every(function (user) {
-  return user.isAdult;
-});
+for (let i = 1; i <= arr.length; i++) {
+  console.log(arr[i]);
+}
 
-const isSomeAdults = users.some(function (user) {
-  return user.isAdult;
-});
+console.log('==================');
+arr.forEach(callback);
 
-const foundUser = users.find(function(user) {
-  return user.age;
-});
+function callback(value, i, array) {
+  console.log(`${value} с индексом ${i}`);
+}
 
-const foundIndex = users.findIndex(function(user) {
-  return user.age;
-});
+const newArr = arr.map(mapCallback);
+
+function mapCallback(item, i, array) {
+  console.log(`${item} с индексом ${i}`);
+
+  const obj = { value: 'test', name: item.name };
+  // item.value = 'test';
+  return obj;
+}
