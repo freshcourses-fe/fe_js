@@ -1,31 +1,62 @@
 'use strict';
 
-const arr = [
-  { name: 'test 1' },
-  { name: 'test 2' },
-  { name: 'test 3' },
-  { name: 'test 4' },
-  { name: 'test 5' },
-  { name: 'test 6' },
-];
+const prototype = {
+  greet: function () {
+    return `Hello ${this.name} ${this.lastName}`;
+  },
+  endCall: function () {
+    return `Your call ended`;
+  },
+  password: 1234,
+  accessLevel: 'user',
+};
 
-for (let i = 1; i <= arr.length; i++) {
-  console.log(arr[i]);
-}
+const obj1 = {
+  name: 'Test',
+  lastName: 'Testovich',
+  password: 9876,
+};
+obj1.__proto__ = prototype;
 
-console.log('==================');
-arr.forEach(callback);
+const obj2 = {
+  name: 'Null',
+  lastName: 'Nullenko',
+  __proto__: prototype,
+};
+/*
+  ====================== User PRototypes ====================
+*/
+const userProto = {
+  write: function () {
+    return 'write';
+  },
+};
 
-function callback(value, i, array) {
-  console.log(`${value} с индексом ${i}`);
-}
+const moderProto = {
+  deleteMessage: function () {
+    return 'delete msg';
+  },
+  __proto__: userProto,
+};
 
-const newArr = arr.map(mapCallback);
+const adminProto = {
+  delteUser: function () {
+    return 'delete user';
+  },
+  __proto__: moderProto,
+};
 
-function mapCallback(item, i, array) {
-  console.log(`${item} с индексом ${i}`);
+const user1 = {
+  name: 'user',
+  __proto__: userProto,
+};
 
-  const obj = { value: 'test', name: item.name };
-  // item.value = 'test';
-  return obj;
-}
+const user2 = {
+  name: 'moder',
+  __proto__: moderProto,
+};
+
+const user3 = {
+  name: 'admin',
+  __proto__: adminProto,
+};
