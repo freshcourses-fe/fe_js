@@ -1,62 +1,27 @@
 'use strict';
 
-const prototype = {
-  greet: function () {
-    return `Hello ${this.name} ${this.lastName}`;
-  },
-  endCall: function () {
-    return `Your call ended`;
-  },
-  password: 1234,
-  accessLevel: 'user',
-};
+function Phone(model, manufacturer, yearOfCreation, price) {
+  this.model = model;
+  this.manufacturer = manufacturer;
+  this.yearOfCreation = yearOfCreation;
+  this.price = price;
+  // this.__proto__ = phonePrototype;
+}
 
-const obj1 = {
-  name: 'Test',
-  lastName: 'Testovich',
-  password: 9876,
-};
-obj1.__proto__ = prototype;
+function PhonePrototype() {
+  this.call = function () {
+    return 'you can call abonents';
+  };
 
-const obj2 = {
-  name: 'Null',
-  lastName: 'Nullenko',
-  __proto__: prototype,
-};
-/*
-  ====================== User PRototypes ====================
-*/
-const userProto = {
-  write: function () {
-    return 'write';
-  },
-};
+  this.endCall = function() {
+    return 'Call ended';
+  }
+}
 
-const moderProto = {
-  deleteMessage: function () {
-    return 'delete msg';
-  },
-  __proto__: userProto,
-};
+// const phonePrototype = new PhonePrototype();
+// Phone.prototype = phonePrototype;
 
-const adminProto = {
-  delteUser: function () {
-    return 'delete user';
-  },
-  __proto__: moderProto,
-};
+Phone.prototype = new PhonePrototype();
 
-const user1 = {
-  name: 'user',
-  __proto__: userProto,
-};
-
-const user2 = {
-  name: 'moder',
-  __proto__: moderProto,
-};
-
-const user3 = {
-  name: 'admin',
-  __proto__: adminProto,
-};
+const phone1 = new Phone('X', 'Iphone', 2018, 9999999);
+const phone2 = new Phone('Galaxy Note X', 'Samsung', 2015, 9999999);
