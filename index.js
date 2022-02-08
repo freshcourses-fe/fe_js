@@ -115,3 +115,15 @@ function sum(number1, number2) {
 
   throw new TypeError('Ожидаем числа в качестве параметров');
 }
+
+function MyArray() {
+  this.length = 0;
+
+  this.push = function (value) {
+    this[this.length] = value;
+
+    this.length++;
+
+    return this.length;
+  };
+}
