@@ -54,6 +54,9 @@ const phone2 = new Phone('Galaxy Note X', 'Samsung', 2015, 9999999);
 // user3.__proto__ = userPrototype;
 
 function User(name, lastName) {
+  if (typeof name !== 'string' || typeof lastName !== 'string') {
+    throw new TypeError('Enter strings');
+  }
   this.name = name;
   this.lastName = lastName;
 
@@ -104,3 +107,11 @@ Moderator.prototype = moderatorPrototype;
 
 const newUser = new User('Item', 'Itemov');
 const moder = new Moderator('Moder', 'MOderovich');
+
+function sum(number1, number2) {
+  if (typeof number1 === 'number' && typeof number2 === 'number') {
+    return number1 + number2;
+  }
+
+  throw new TypeError('Ожидаем числа в качестве параметров');
+}
