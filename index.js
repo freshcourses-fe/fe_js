@@ -1,5 +1,40 @@
 'use strict';
 
+
+try {
+  // опасный код
+  const phone1 = new Phone('X', 'Iphone', 2018, 9999999);
+  const phone2 = new Phone('Galaxy Note X', 'Samsung', 2015, 9999999);
+  
+  const newUser = new User('Item', 'Itemov');
+  // const newUser2 = new User('', 'Test');
+  // throw new Error('ужас');
+  const moder = new Moderator('Moder', 'MOderovich');
+  console.log('test');
+} catch( error ) {
+  // обрабатываем нашу ошибку
+  console.error(error);
+
+  console.log(error.message);
+
+  if(error.message === 'ужас') {
+    console.log('все плохо');
+  }
+} finally { 
+  // блок который выполняется всегда
+  console.log('все закончилось')
+}
+
+
+
+
+
+
+
+
+
+// ============================================
+
 function Phone(model, manufacturer, yearOfCreation, price) {
   this.model = model;
   this.manufacturer = manufacturer;
@@ -18,44 +53,36 @@ function PhonePrototype() {
   };
 }
 
-// const phonePrototype = new PhonePrototype();
-// Phone.prototype = phonePrototype;
-
 Phone.prototype = new PhonePrototype();
 
-const phone1 = new Phone('X', 'Iphone', 2018, 9999999);
-const phone2 = new Phone('Galaxy Note X', 'Samsung', 2015, 9999999);
+function sum(number1, number2) {
+  if (typeof number1 === 'number' && typeof number2 === 'number') {
+    return number1 + number2;
+  }
 
-// const user1 = {
-//   name: 'Test',
-//   lastName: 'Testovich',
-// };
+  throw new TypeError('Ожидаем числа в качестве параметров');
+}
 
-// const user2 = {
-//   name: 'Undefined',
-//   lastName: 'Undefinenko',
-// };
 
-// const userPrototype = {
-//   name: 'Adam',
-//   lastName: 'Adamovich',
-//   getFullName: function () {
-//     return `${this.name} ${this.lastName}`;
-//   },
-//   walk: function () {
-//     return `${this.name} ${this.lastName} is walking`;
-//   },
-// };
+function MyArray() {
+  this.length = 0;
 
-// user1.__proto__ = userPrototype;
-// user2.__proto__ = userPrototype;
+  this.push = function (value) {
+    this[this.length] = value;
 
-// const user3 = {};
-// user3.__proto__ = userPrototype;
+    this.length++;
+
+    return this.length;
+  };
+}
+
 
 function User(name, lastName) {
   if (typeof name !== 'string' || typeof lastName !== 'string') {
     throw new TypeError('Enter strings');
+  }
+  if(name === '' || lastName === '') {
+    throw new Error('Strings cannot be empty');
   }
   this.name = name;
   this.lastName = lastName;
@@ -104,26 +131,3 @@ function Moderator(name, lastName) {
 const moderatorPrototype = new ModeratorPrototype();
 
 Moderator.prototype = moderatorPrototype;
-
-const newUser = new User('Item', 'Itemov');
-const moder = new Moderator('Moder', 'MOderovich');
-
-function sum(number1, number2) {
-  if (typeof number1 === 'number' && typeof number2 === 'number') {
-    return number1 + number2;
-  }
-
-  throw new TypeError('Ожидаем числа в качестве параметров');
-}
-
-function MyArray() {
-  this.length = 0;
-
-  this.push = function (value) {
-    this[this.length] = value;
-
-    this.length++;
-
-    return this.length;
-  };
-}
