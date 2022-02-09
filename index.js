@@ -1,37 +1,43 @@
 'use strict';
 
-
 try {
   // опасный код
   const phone1 = new Phone('X', 'Iphone', 2018, 9999999);
   const phone2 = new Phone('Galaxy Note X', 'Samsung', 2015, 9999999);
-  
+
   const newUser = new User('Item', 'Itemov');
   // const newUser2 = new User('', 'Test');
   // throw new Error('ужас');
   const moder = new Moderator('Moder', 'MOderovich');
   console.log('test');
-} catch( error ) {
+} catch (error) {
   // обрабатываем нашу ошибку
   console.error(error);
 
   console.log(error.message);
 
-  if(error.message === 'ужас') {
+  if (error.message === 'ужас') {
     console.log('все плохо');
   }
-} finally { 
+} finally {
   // блок который выполняется всегда
-  console.log('все закончилось')
+  console.log('все закончилось');
 }
 
+const bool = new Boolean(true);
+
+const num = Number(150);
+
+const str = String('test');
 
 
+console.log(str.length);
 
-
-
-
-
+/*
+  создайте функцию которая принимает строку
+  и возвращает количество гласных букв в ней
+  a , e , o , i , u
+*/
 
 // ============================================
 
@@ -63,7 +69,6 @@ function sum(number1, number2) {
   throw new TypeError('Ожидаем числа в качестве параметров');
 }
 
-
 function MyArray() {
   this.length = 0;
 
@@ -76,12 +81,11 @@ function MyArray() {
   };
 }
 
-
 function User(name, lastName) {
   if (typeof name !== 'string' || typeof lastName !== 'string') {
     throw new TypeError('Enter strings');
   }
-  if(name === '' || lastName === '') {
+  if (name === '' || lastName === '') {
     throw new Error('Strings cannot be empty');
   }
   this.name = name;
