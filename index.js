@@ -22,90 +22,22 @@ function countLetters(str, arr = ['a', 'e', 'i', 'u', 'o']) {
 
   return result;
 }
+// let sum = 0;
 
-const ceil = Math.ceil(5.5);
-const floor = Math.floor(5.5);
-const round = Math.round('asdasf.5');
+// for (let i = 0; i <= numbers.length; i++) {
+  //   sum = sum + numbers[i];
+  // }
+  
+  // return sum;
+  
+  // rest operator
+const sum = (...numbers) => numbers.reduce((sum, number) => sum + number);
 
-const result = Math.pow(2, 3);
-
-const func = function (param1) {
-  const arrow = () => {
-    console.log(this);
-  };
-
-  arrow();
-};
-
-const Func = function (param1) {
-  debugger;
-  this.param1 = param1;
-
-  return this;
-};
-
-const ArrowFunc = (param1, param2) => {
-  debugger;
-  // console.log('arrow');
-  // console.log(param1);
-  // console.log(this);
-
-  return this;
-};
-
-const obj = {
-  name: 'Test',
-  lastName: 'Test',
-  phoneNumbers: ['064964684', '0324165468', '564546456'],
-  getUserInfo: function () {
-    return `${this.name} ${this.lastName} with phones: ${this.phoneNumbers}`;
-  },
-  getUserInfoArrow: () => {
-    return `${this.name} ${this.lastName} with phones: ${this.phoneNumbers}`;
-  },
-
-  logPhones: function () {
-    // for(let i = 0; i < this.phoneNumbers.length; i++) {
-    //   console.log(`Номер телефона ${i + 1} : ${this.phoneNumbers[i]}`)
-    // }
-
-    // console.log(this)
-
-    // const that = this;
-
-    // this.phoneNumbers.forEach(function callback(phoneNumber, i) {
-    //   console.log(that);
-    //   console.log(`Телефон  №${i + 1} : ${phoneNumber}`);
-    // });
-
-    debugger;
-
-    const arrow = (phoneNumber, i) => {
-      console.log(this);
-      console.log(`Телефон  №${i + 1} : ${phoneNumber}`);
-    };
-
-    this.phoneNumbers.forEach(arrow);
-  },
-};
-// arrowFunc();
-
-function User(name, lastName) {
-  this.name = name;
-  this.lastName = lastName;
-
-  this.getFullName = function () {
-    return `${this.name}  ${this.lastName}`;
-  };
-
-  this.getFullNameArrow = () => `${this.name} ${this.lastName}`;
+function func(important, ...rest) {
+  console.log(important);
+  console.log(rest);
 }
-
-const user = new User('Test', 'Test');
-
-function sum(num1, num2) {
-  console.log(arguments);
-  return arguments[0] + arguments[1] + arguments[2];
-}
-
-const arrowSum = (num1, num2) => num1 + num2;
+// 2 , 2 , 2 = 6
+// 10 , 5, 0 = 15
+// 1 = 1
+// -100, -200, -300, -400 = -1000
