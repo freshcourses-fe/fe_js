@@ -58,13 +58,18 @@ const obj2 = {
   lastName: 'Testovich',
 };
 
-const user = { 
-  ...obj1, 
-  ...obj2, 
-  address: { city: 'ZP' }, 
-  ...nums 
+const user = {
+  ...obj1,
+  name: obj1.name,
+  ...obj2,
+  address: { city: 'ZP' },
+  ...nums,
 };
 
+// const options = {
+//   ...defaultOptions,
+//   ...userOptions
+// }
 // const uberArray= [...user];
 // sum(...user)
 
@@ -91,4 +96,44 @@ const user = {
 
 // function greet(user) {
 //   return `Hello ${user.name} ${user.lastName}`
+// }
+
+const symbol1 = Symbol('test');
+const symbol2 = Symbol('test');
+
+const symbol3 = symbol1;
+
+const obj = {
+  secret: 'secret data',
+  0: 'secret data',
+  [symbol1]: 'secret data',
+};
+
+const object = {
+  0: 10,
+  1: 15,
+  2: 20,
+  length: 3,
+  [Symbol.iterator]: function () {
+    const context = this;
+    let i = 0;
+    const returnObject = {
+      next: function() {
+        return {
+          done:  i >= context.length,
+          value: context[i++]
+        }
+      }
+    };
+
+    return returnObject;
+  },
+};
+
+for(const value of object) {
+  console.log(value);
+}
+
+// for(const value of obj ) {
+//   console.log(value);
 // }
