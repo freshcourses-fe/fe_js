@@ -4,16 +4,17 @@ class CompanyClass {
     this.address = address;
     this.type = type;
     this.employeeList = employeeList;
-    if (true) {
+
+    if (Math.random() > 0.5) {
       this.test = 'test';
     }
   }
 
   addEmployee(employee) {
-    debugger;
     this.employeeList.push(employee);
   }
 }
+
 /*
   созадть класс User
   у него есть свойства
@@ -28,36 +29,39 @@ class CompanyClass {
 
 class User {
   constructor(name, surname, age) {
-    if (typeof name !== 'string' || typeof surname !== 'string') {
-      throw new TypeError(
-        'Invalid data, name and surname must be strings and age must be number'
-      );
-    }
-    if (name.trim() === '') {
-      throw new Error('Name must be not empty');
-    }
-    if (surname.trim() === '') {
-      throw new Error('Surname must be not empty');
-    }
-
     this.name = name;
     this.surname = surname;
     this.age = age;
+    this.counter = 0;
   }
 
-  set age(newAge) {
-    if (typeof newAge !== 'number') {
-      throw new TypeError('age must be number');
-    }
-    if (newAge > 150 || newAge < 0 || isNaN(newAge)) {
-      throw new RangeError('Age must be normal');
+  setName(newName) {
+    if (typeof newName !== 'string') {
+      throw new TypeError('Invalid data, name must be string');
     }
 
-    this._age = newAge;
+    if (newName.trim() === '') {
+      throw new Error('Name must be not empty');
+    }
+
+    this.name = newName;
   }
 
-  get age() {
-    return this._age;
+  get name() {
+    this.counter++;
+    return this._name;
+  }
+
+  set name(newName) {
+    if (typeof newName !== 'string') {
+      throw new TypeError('Invalid data, name must be string');
+    }
+
+    if (newName.trim() === '') {
+      throw new Error('Name must be not empty');
+    }
+
+    this._name = newName;
   }
 
   getFullName = () => `${this.name} ${this.surname}`;
@@ -67,4 +71,4 @@ class User {
 
 const user = new User('Ivan', 'Ivanov', 42);
 const user1 = new User('Ivan', 'Ivanov', 12);
-const user2 = new User('Test', 'Testovich', -500);
+const user2 = new User('Test', 'Testovich', 50);
