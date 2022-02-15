@@ -163,17 +163,17 @@ class Admin extends Moder {
   }
 
   ban(user) {
-    if(user instanceof Admin) {
-      throw new Error('Админы своих не бьют')
+    if (user instanceof Admin) {
+      throw new Error('Админы своих не бьют');
     }
     return (user.isBanned = true);
   }
 
-  unban (user) {
+  unban(user) {
     return (user.isBanned = false);
   }
 
-  setName (user, newName) {
+  setName(user, newName) {
     user.name = newName;
   }
 }
@@ -192,3 +192,47 @@ const admin1 = new Admin(
   'tiran2011@mylo.est',
   'address'
 );
+// incapsulation
+
+class Figure {
+  constructor(name) {
+    this.name = name;
+  }
+
+  getArea() {}
+}
+
+class Square extends Figure {
+  constructor(a) {
+    super('Square');
+    this.a = a;
+  }
+
+  getArea() {
+    return this.a * this.a;
+  }
+}
+
+class Circle extends Figure {
+  constructor(radius) {
+    super('Circle');
+    this.radius = radius;
+  }
+
+  // getArea() {
+  //   return Math.PI * this.radius * this.radius;
+  // }
+}
+
+const figure = new Figure('figure');
+const square = new Square(5);
+const circle = new Circle(10);
+// polimorphism
+
+function getFigureArea(figure) {
+  if(figure instanceof Figure) {
+    return figure.getArea()
+  }
+
+  throw new TypeError('Это не фигура');
+}
