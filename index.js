@@ -1,40 +1,52 @@
-'use strict';
+/*
+Создать класс Animal и унаследовать от него несколько других животных, 
+например льва  и змею 
+у них будут клички
+Они долны уметь есть двигатсья есть и говорить (издавать звуки)
+Создать класс дрессировщика, котрый будет иметь методы, 
+которые будут заствалять дрессируемое 
+животное делать то или иное действие
+*/
 
-function Company(name, address, type, employeeList = []) {
-  this.name = name;
-  this.address = address;
-  this.type = type;
-  this.employeeList = employeeList;
+class Animal {
+  constructor(type, nickname) {
+    this.type = type;
+    this.nickname = nickname;
+  }
 
-  if(true) {
-    this.test = 'test'
+  speak() {
+    return `Животное ${this.nickname} издает звуки`;
   }
 }
 
-function CompanyProto() {
-  this.addEmployee = function (employee) {
-    this.employeeList.push(employee);
-  };
+class Snake extends Animal {
+  constructor(nickname) {
+    super('Змея', nickname);
+  }
+
+  speak() {
+    return `${this.type} ${this.nickname} шипит`;
+  }
 }
 
-Company.prototype = new CompanyProto();
+class Cat extends Animal {
+  constructor(nickname) {
+    super('Кот', nickname);
+  }
 
-const company1 = new Company(
-  'Apple',
-  {
-    country: 'USA',
-    state: 'California',
-    city: 'LA',
-  },
-  'tech'
-);
+  speak() {
+    return `${this.type} ${this.nickname} мяукает`;
+  }
+}
 
-// const company2 = Company(
-//   'Apple',
-//   {
-//     country: 'USA',
-//     state: 'California',
-//     city: 'LA',
-//   },
-//   'tech'
-// );
+class Trainer {
+  trainSpeech(animal) {
+    return animal.speak();
+  }
+}
+
+const animal = new Animal('животное', 'Пушок');
+const snake = new Snake('Ефрасинья Петровна');
+const cat = new Cat('Симба');
+
+const trainer = new Trainer();
