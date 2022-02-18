@@ -93,7 +93,7 @@ const goodTable = createMultiplicationTable(10);
 console.timeEnd('O(n^2) best case');
 
 console.time('O(n^2) worst case');
-const badTable = createMultiplicationTable(5000);
+// const badTable = createMultiplicationTable(5000);
 console.timeEnd('O(n^2) worst case');
 
 // const arr = [0, 1, 2, 5, 7, 8, 9];
@@ -133,6 +133,28 @@ function binarySearch(arr, number) {
   
 
 */
+
+function numberGuesser(endRange = 100) {
+  let start = 0;
+  let end = endRange;
+
+  let center = Math.round((start + end) / 2);
+
+  while (true) {
+    const answer = confirm(`Вы загадывали число ${center} ?`);
+    if (answer) {
+      return center;
+    }
+    const guessDirection = confirm(`Загаданное число больше чем ${center}?`);
+    if (guessDirection) {
+      start = center;
+      center = Math.ceil((start + end) / 2);
+    } else {
+      end = center;
+      center = Math.floor((start + end) / 2);
+    }
+  }
+}
 
 console.time('O(log n) best case');
 const goodSearch = binarySearch(arr2, 2500000);
