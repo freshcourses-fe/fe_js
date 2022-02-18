@@ -1,165 +1,62 @@
-/*
-  y = log x - логарифмическая
-  y = x  - линейная функция
-  y = x^2  - квадратичная
-  y = x^3 - кубическая
-  y = 2 ^ x - експоненциальная
-  y = x! - факториальная
-*/
-/*
-5! = 1 * 2 * 3 * 4  * 5
-*/
+const set = new Set();
+
+set.add(1);
+set.add('test');
+set.add(false);
+set.add(1);
+set.add('1');
+
+set.delete(false);
+
+set.delete([0]);
+
+// set.clear();
+
+// set.forEach((value, valueAgain, set) => {
+//   console.log(value);
+// });
+
+const result = set.has(1);
+const result2 = set.has(10);
+
+// console.log('values');
+// for(const value of set.values()) {
+//   console.log(value);
+// }
+// console.log('keys');
+// for(const value of set.keys()) {
+//   console.log(value);
+// }
+// console.log('entries');
+// for(const value of set.entries()) {
+//   console.log(value);
+// }
 
 /*
-  n - сколько было операций / входных данный
-  x - быстродействие
-  x = 10*n + 15 - линейная сложность
-  x = n^2 + 2 - квадратичная сложность
-  x = 2^n + 5n + 1500
+  есть 2 массива с повторяющимися значениями
+  воспользуясь setом удалите повторяющиеся значения
+
 */
+const arr1 = [1, 2, 3, 4, 5, 6];
+const arr2 = [-5, 80, 2, 15, 4];
 
-/*
- n = 20000
+const set2 = new Set([...arr1, ...arr2]);
 
- x = 20000 * 10 + 15 = 200015
- x = 400000002
- x = 40 * 10^6020
-*/
+// for(let i = 0; i < arr1.length; i++) {
+//   set2.add(arr1[i]);
+// }
 
-/*
-  x = n - линейная сложность
-  x = n^2 
-  x = 2^n 
+// arr2.forEach((element)=> {
+//   set2.add(element);
+// });
 
-  O(n)
-  O(n^2)
-  O(2^n + n)
-*/
+const resultArr = [...set2];
 
-// O (1)
-function isFirstElementOfArray(arr, element) {
-  return arr[0] === element;
-}
-
-const arr = [0, 1, 2, 5, 7, 8, 9];
-const arr2 = Array(50000000)
-  .fill(null)
-  .map((_, index) => index);
-const number1 = 8;
-const number2 = 5;
-
-console.time('O(1)');
-const result1 = isFirstElementOfArray(arr, number1);
-console.timeEnd('O(1)');
-
-console.time('O(1) big array');
-const result2 = isFirstElementOfArray(arr2, number2);
-console.timeEnd('O(1) big array');
-
-// O (n)
-function isElementInArray(arr, elem) {
-  for (let i = 0; i < arr.length; i++) {
-    if (elem === arr[i]) {
-      return true;
-    }
+class MyArray {
+  constructor() {
+    this.length = 0;
   }
+  push() {}
 
-  return false;
+  static isMyArray(arg) {}
 }
-
-console.time('O(n) best case');
-const oNbest = isElementInArray(arr2, 0);
-console.timeEnd('O(n) best case');
-
-console.time('O(n) worst case');
-const oNworst = isElementInArray(arr2, 4999999);
-console.timeEnd('O(n) worst case');
-
-// O (n^2)
-
-function createMultiplicationTable(limit) {
-  const table = [];
-  for (let i = 0; i < limit; i++) {
-    for (let j = 0; j < limit; j++) {
-      table.push(`${i} * ${j} = ${i * j}`);
-    }
-  }
-
-  return table;
-}
-
-console.time('O(n^2) best case');
-const goodTable = createMultiplicationTable(10);
-console.timeEnd('O(n^2) best case');
-
-console.time('O(n^2) worst case');
-// const badTable = createMultiplicationTable(5000);
-console.timeEnd('O(n^2) worst case');
-
-// const arr = [0, 1, 2, 5, 7, 8, 9];
-// O (log n)
-function binarySearch(arr, number) {
-  // debugger;\
-  let steps = 0;
-  let start = 0;
-  let end = arr.length - 1;
-
-  let center = Math.round((start + end) / 2);
-
-  while (true) {
-    steps++;
-    if (arr[center] === number) {
-      console.log(steps);
-      return center;
-    }
-
-    if (arr[center] > number) {
-      end = center;
-      center = Math.floor((start + end) / 2);
-    } else {
-      start = center;
-      center = Math.ceil((start + end) / 2);
-    }
-  }
-}
-
-/*
-
-  Создать функцию бинарный вопросник
-  функция будет принимать число
-  0 .... 100 numberGuesser(100)
-  функция по циклу спрашивает confirm-ом у пользователя
-  рпвильное ли число которое по середине сейчас
-  
-
-*/
-
-function numberGuesser(endRange = 100) {
-  let start = 0;
-  let end = endRange;
-
-  let center = Math.round((start + end) / 2);
-
-  while (true) {
-    const answer = confirm(`Вы загадывали число ${center} ?`);
-    if (answer) {
-      return center;
-    }
-    const guessDirection = confirm(`Загаданное число больше чем ${center}?`);
-    if (guessDirection) {
-      start = center;
-      center = Math.ceil((start + end) / 2);
-    } else {
-      end = center;
-      center = Math.floor((start + end) / 2);
-    }
-  }
-}
-
-console.time('O(log n) best case');
-const goodSearch = binarySearch(arr2, 2500000);
-console.timeEnd('O(log n) best case');
-
-console.time('O(log n) worst case');
-const badSearch = binarySearch(arr2, 1);
-console.timeEnd('O(log n) worst case');
