@@ -1,4 +1,4 @@
-const set = new Set();
+const set = new Set([1, 2, 5, 86, 3, 8, 6, 8]);
 
 set.add(1);
 set.add('test');
@@ -10,6 +10,12 @@ set.delete(false);
 
 set.delete([0]);
 
+const obj = {};
+
+const obj2 = obj;
+
+const symbol1 = Symbol();
+const symbol2 = Symbol();
 // set.clear();
 
 // set.forEach((value, valueAgain, set) => {
@@ -56,7 +62,38 @@ class MyArray {
   constructor() {
     this.length = 0;
   }
-  push() {}
+  push(value) {
+    this[this.length++] = value;
+
+    return this.length;
+  }
+
+  concat(...args) {
+    const newArr = new MyArray();
+
+    // по циклу запушить все значения this в новый массив
+    for (let i = 0; i < this.length; i++) {
+      newArr.push(this[i]);
+    }
+
+    // по циклу проходимя по массиву аргументов
+
+    // 2.1 проверить что элемент из args  - это массив
+
+    // 2,2 если да то заупустить цикл для него и
+    // внутри пушить элементы в новый массив
+
+    // иначе просто запушит ьэлемент в новый массив
+
+    // вернуть новый массив
+    return newArr;
+  }
+
+  [Symbol.iterator]() {}
 
   static isMyArray(arg) {}
 }
+
+const myArr = new MyArray();
+
+
