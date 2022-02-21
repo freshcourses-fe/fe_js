@@ -34,20 +34,19 @@ const delete2 = map.delete(arr);
 
 const keys = [];
 
-for( const key of map.keys()) {
+for (const key of map.keys()) {
   keys.push(key);
 }
 
 const values = [];
 
-for( const value of map.values()) {
+for (const value of map.values()) {
   values.push(value);
 }
 
-
 const entries = [];
 
-for( const entry of map.entries()) {
+for (const entry of map.entries()) {
   entries.push(entry);
 }
 
@@ -70,22 +69,85 @@ lastName
 const user1 = {
   id: 5,
   name: 'John',
-  lastName: 'Doe'
-}
+  lastName: 'Doe',
+};
 
 const user2 = {
   id: 5047,
   name: 'Jane',
-  lastName: 'Doe'
-}
+  lastName: 'Doe',
+};
 
 const user3 = {
   id: 12,
   name: 'John',
-  lastName: 'NotDoe'
+  lastName: 'NotDoe',
+};
+
+const johnMessages = ['Hi', 'Bye'];
+
+const janeMessages = ['Hi', 'Bye', 'NO', 'Yes'];
+
+const usersToMessages = new Map();
+
+usersToMessages.set(user1.id, johnMessages);
+usersToMessages.set(user2.id, janeMessages);
+
+function getUserMessages(userId) {
+  if (usersToMessages.has(userId)) {
+    return usersToMessages.get(userId);
+  }
+
+  throw new Error('404 User not found');
 }
 
-const johnMessages = [
-  'Hi',
-  'Bye'
-]
+const getUserMessagesArrow = (userId) =>
+  usersToMessages.has(userId)
+    ? usersToMessages.get(userId)
+    : new Error('404 User not found');
+
+/*
+  есть строка текста на языке. 
+  Получить на её основании 
+  строку текста на другом языке
+*/
+const untranslatedText = 'Привет меня зовут Вася';
+const translatedText = 'Hello my name is Vasya';
+
+const dictionary = new Map([
+  ['привет', 'hello'],
+  ['меня', 'my'],
+  ['зовут', 'name is'],
+  ['вася', 'Vasya'],
+  ['кот', 'cat'],
+  ['собака', 'dog'],
+]);
+
+// function translate(...words) {
+//   let translated = '';
+//   for (let i = 0; i < words.length; i++) {
+//     translated += `${dictionary.get(words[i])} `;
+//   }
+
+//   return translated;
+// }
+
+function translate(str) {
+  const words = str.toLowerCase().split(' ');
+
+  const result = [];
+
+  for (const word of words) {
+    if (dictionary.has(word)) {
+      result.push(dictionary.get(word));
+    } else {
+      result.push(word);
+    }
+  }
+
+  result[0] = result[0].toUpperCase();
+
+  return result.join(' ');
+}
+
+const res = translate('Привет', 'меня', 'зовут', 'Вася');
