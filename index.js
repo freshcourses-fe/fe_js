@@ -1,99 +1,91 @@
-const set = new Set([1, 2, 5, 86, 3, 8, 6, 8]);
+const map = new Map();
 
-set.add(1);
-set.add('test');
-set.add(false);
-set.add(1);
-set.add('1');
+map.set('name', 'Test');
+map.set('123', true);
+map.set(123, false);
+map.set(123, 'fals21312321e');
 
-set.delete(false);
+const data = map.get('name');
+const key = { name: 'Test' };
+map.set(key, { password: '12345admin' });
 
-set.delete([0]);
+const func = function () {
+  return 'hello';
+};
 
-const obj = {};
+const arr = [123];
 
-const obj2 = obj;
+map.set(func, 1);
 
-const symbol1 = Symbol();
-const symbol2 = Symbol();
-// set.clear();
+map.set(arr, true);
 
-// set.forEach((value, valueAgain, set) => {
-//   console.log(value);
-// });
+const map2 = new Map([
+  [1, 'test'],
+  [arr, 'new'],
+]);
 
-const result = set.has(1);
-const result2 = set.has(10);
+const isArrAKey = map2.has(arr);
+const isFuncAKey = map2.has(func);
 
-// console.log('values');
-// for(const value of set.values()) {
-//   console.log(value);
-// }
-// console.log('keys');
-// for(const value of set.keys()) {
-//   console.log(value);
-// }
-// console.log('entries');
-// for(const value of set.entries()) {
-//   console.log(value);
-// }
+const delete1 = map.delete(arr);
+const delete2 = map.delete(arr);
 
-/*
-  есть 2 массива с повторяющимися значениями
-  воспользуясь setом удалите повторяющиеся значения
+// map.clear();
 
-*/
-const arr1 = [1, 2, 3, 4, 5, 6];
-const arr2 = [-5, 80, 2, 15, 4];
+const keys = [];
 
-const set2 = new Set([...arr1, ...arr2]);
-
-// for(let i = 0; i < arr1.length; i++) {
-//   set2.add(arr1[i]);
-// }
-
-// arr2.forEach((element)=> {
-//   set2.add(element);
-// });
-
-const resultArr = [...set2];
-
-class MyArray {
-  constructor() {
-    this.length = 0;
-  }
-  push(value) {
-    this[this.length++] = value;
-
-    return this.length;
-  }
-
-  concat(...args) {
-    const newArr = new MyArray();
-
-    // по циклу запушить все значения this в новый массив
-    for (let i = 0; i < this.length; i++) {
-      newArr.push(this[i]);
-    }
-
-    // по циклу проходимя по массиву аргументов
-
-    // 2.1 проверить что элемент из args  - это массив
-
-    // 2,2 если да то заупустить цикл для него и
-    // внутри пушить элементы в новый массив
-
-    // иначе просто запушит ьэлемент в новый массив
-
-    // вернуть новый массив
-    return newArr;
-  }
-
-  [Symbol.iterator]() {}
-
-  static isMyArray(arg) {}
+for( const key of map.keys()) {
+  keys.push(key);
 }
 
-const myArr = new MyArray();
+const values = [];
+
+for( const value of map.values()) {
+  values.push(value);
+}
 
 
+const entries = [];
+
+for( const entry of map.entries()) {
+  entries.push(entry);
+}
+
+const mapCopy = new Map(entries);
+
+/*
+есть 2 юзера с полями
+id
+name 
+lastName
+
+есть 2 массива с сообщениями пользователя
+
+вам нужно создать функцию которая приймет 
+данные от юзера
+и вернет массив с его сообщениями
+
+*/
+
+const user1 = {
+  id: 5,
+  name: 'John',
+  lastName: 'Doe'
+}
+
+const user2 = {
+  id: 5047,
+  name: 'Jane',
+  lastName: 'Doe'
+}
+
+const user3 = {
+  id: 12,
+  name: 'John',
+  lastName: 'NotDoe'
+}
+
+const johnMessages = [
+  'Hi',
+  'Bye'
+]
